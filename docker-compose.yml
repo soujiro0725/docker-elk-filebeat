@@ -55,7 +55,8 @@ services:
       context: filebeat/
       args:
         ELK_VERSION: $ELK_VERSION
-    #command: filebeat -e -strict.perms=false
+    user: root        
+    command: filebeat -e -strict.perms=false
     volumes:
       - ./filebeat/config/filebeat.yml:/usr/share/filebeat/config/filebeat.yml:ro
       - $HOME/Projects/docker-elk-filebeat/logs:/usr/share/filebeat/logs
@@ -63,7 +64,7 @@ services:
       - elk
     depends_on:
       - elasticsearch
-      - logstash
+
     # links:
     #    - elasticsearch
     #    - kibana

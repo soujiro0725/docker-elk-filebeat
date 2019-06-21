@@ -1,6 +1,7 @@
 filebeat.prospectors:
 - input_type: log
   paths:
+    - /var/log/yum.log
     - /usr/share/filebeat/logs/*.log
 
 setup.template.name: "filebeat-"
@@ -8,17 +9,19 @@ setup.template.pattern: "filebeat-*"
 setup.dashboards.enabled: true
 
 setup.kibana:
-  host: "http://localhost:5601"
-  username: elastic
-  password: changeme
+  host: "http://kibana:5601"
+  # username: elastic
+  # password: changeme
 
-# output.elasticsearch:
-#   hosts: ["http://elasticsearch:9200"]
-#   username: elastic
-#   password: changeme
-#   index: "filebeat-%{[beat.version]}-%{+yyyy.MM.dd}"
+output.elasticsearch:
+  hosts: [ "http://elasticsearch:9200" ]
+  username: "elastic"
+  password: "changeme"
+  index: "filebeat-%{[beat.version]}-%{+yyyy.MM.dd}"
 
 #----------------------------- Logstash output --------------------------------
 # 出力先のログスタッシュを指定します
-output.logstash:
-  hosts: ["localhost:5000"]
+# output.logstash:
+#   hosts: ["localhost:5000"]
+
+logging.level: debug
