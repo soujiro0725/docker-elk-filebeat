@@ -1,0 +1,5 @@
+2019-06-21T00:53:47.843Z	INFO	instance/beat.go:571	Home path: [/usr/share/filebeat] Config path: [/usr/share/filebeat] Data path: [/usr/share/filebeat/data] Logs path: [/usr/share/filebeat/logs]
+2019-06-21T00:53:47.846Z	INFO	instance/beat.go:579	Beat ID: 41d5b7ea-2eba-4dac-8fc2-81c4bd77b192
+2019-06-21T00:53:47.847Z	INFO	[index-management.ilm]	ilm/ilm.go:129	Policy name: filebeat-7.1.1
+2019-06-21T00:53:47.965Z	INFO	add_cloud_metadata/add_cloud_metadata.go:346	add_cloud_metadata: hosting provider type not detected.
+2019-06-21T00:53:51.008Z	INFO	kibana/client.go:118	Kibana url: http://localhost:5601
