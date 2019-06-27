@@ -1,6 +1,23 @@
 version: '2'
 
 services:
+  
+  filebeat:
+    build:
+      context: filebeat/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    # command: filebeat -e -strict.perms=false
+    volumes:
+      - ./filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - $HOME/Projects/docker-elk-filebeat/logs:/usr/share/filebeat/logs
+    restart: always
+    networks:
+      - elk
+    depends_on:
+      - logstash
+      - elasticsearch
+      - kibana
 
   elasticsearch:
     build:
@@ -28,6 +45,7 @@ services:
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
     ports:
       - "5000:5000"
+      - "5043:5043"
       - "9600:9600"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
@@ -50,26 +68,10 @@ services:
     depends_on:
       - elasticsearch
 
-  filebeat:
-    build:
-      context: filebeat/
-      args:
-        ELK_VERSION: $ELK_VERSION
-    user: root        
-    command: filebeat -e -strict.perms=false
-    volumes:
-      - ./filebeat/config/filebeat.yml:/usr/share/filebeat/config/filebeat.yml:ro
-      - $HOME/Projects/docker-elk-filebeat/logs:/usr/share/filebeat/logs
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
 
-    # links:
-    #    - elasticsearch
-    #    - kibana
 
 networks:
 
   elk:
     driver: bridge
+
