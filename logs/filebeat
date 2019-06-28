@@ -1,4 +1,0 @@
-2019-06-26T05:51:08.271Z	INFO	instance/beat.go:571	Home path: [/usr/share/filebeat] Config path: [/usr/share/filebeat] Data path: [/usr/share/filebeat/data] Logs path: [/usr/share/filebeat/logs]
-2019-06-26T05:51:08.287Z	INFO	instance/beat.go:579	Beat ID: b6cf8036-2294-4794-abb4-3c162ee5007d
-2019-06-26T05:51:08.287Z	INFO	[index-management.ilm]	ilm/ilm.go:129	Policy name: filebeat-7.1.1
-2019-06-26T05:51:10.207Z	INFO	kibana/client.go:118	Kibana url: http://kibana:5601
