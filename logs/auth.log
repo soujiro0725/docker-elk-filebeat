@@ -947,3 +947,8 @@ Jun 28 15:11:35 metasploitable sshd[22801]: pam_unix(sshd:session): session clos
 Jun 28 15:12:29 metasploitable rlogind[23049]: Can't get peer name of remote host: Transport endpoint is not connected
 Jun 28 15:12:44 metasploitable sshd[23055]: Accepted password for msfadmin from 172.16.255.1 port 52426 ssh2
 Jun 28 15:12:44 metasploitable sshd[23057]: pam_unix(sshd:session): session opened for user msfadmin by (uid=0)
+Jun 28 15:12:45 metasploitable sshd[23057]: pam_unix(sshd:session): session closed for user msfadmin
+Jun 28 15:17:01 metasploitable CRON[23084]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jun 28 15:17:01 metasploitable CRON[23084]: pam_unix(cron:session): session closed for user root
+Jun 28 15:28:07 metasploitable sshd[23098]: Accepted password for msfadmin from 172.16.255.1 port 52718 ssh2
+Jun 28 15:28:07 metasploitable sshd[23100]: pam_unix(sshd:session): session opened for user msfadmin by (uid=0)
